@@ -8,11 +8,18 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
     
     <!-- <bean id="employee" class="com.home.model.Employee" autowire="byName"> -->
-    <bean id="employee" class="com.home.model.Employee" autowire="byType">
+    <!-- <bean id="employee" class="com.home.model.Employee" autowire="byType">
     <property name="employeeId" value="1"></property>
     <property name="employeeName" value="Vivek Garg"></property>
     <property name="email" value="vivekg@gmail.com"></property>
-    <!-- <property name="pancard" ref="pancard"></property> -->
+    <property name="pancard" ref="pancard"></property>
+    </bean> -->
+    
+    <bean id="employee" class="com.home.model.Employee" autowire="constructor">
+    <constructor-arg name="employeeId" value="1"></constructor-arg>
+    <constructor-arg name="employeeName" value="Vivek Garg"></constructor-arg>
+    <constructor-arg name="email" value="vivekg@gmail.com"></constructor-arg>
+    <!-- <constructor-arg name="pancard" ref="pancard"></constructor-arg> -->
     </bean>
     
     <bean id="pancard" class="com.home.model.Pancard">
